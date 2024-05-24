@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+</head>
+<body>
+    <h1>Welcome to our App - {{ ApplicationName }}</h1>
+
+    <ul>
+    {% for item in courselist %}
+        <li>{{ item.course_name }}</li>
+    {% endfor%}
+    </ul>
+
+    <a href="{% url 'addnewcourse'%}">Add New Course</a>
+
+    <a href="{% url 'studentlist' %}">Student List</a>
+   
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student Information</title>
+    
+</head>
+<body>
+    
+    <h1> Update Student Information</h1>
+
+    <form method="post" action="{% url 'updateStudent'%}">
+        {% csrf_token %}
+
+        <p>
+            <label> Student No# </label>
+            <input type="text" name="studentno" value="{{student.student_id}}" readonly>
+        </p>
+
+        <p>
+            <label>Student Name:</label>
+            <input type="text" id="studentname" name="studentname" required maxlength="50" value="{{student.first_name}}">
+        </p>
+
+        <p>
+            <label>
+                Student Lastname:
+            </label>
+            <input type="text" id="studentlastname" name="studentlastname" value="{{student.last_name}}">
+        </p>
+
+        <p>
+            <label>
+                Date of Birth
+            </label>
+            <input type="date" id="studentdob" name="studentdob" value="{{student.date_of_birth }}">
+        </p>
+
+        
+
+        <p>
+            <label>
+               Gender:
+            </label>
+            <select name="studentgender" id="studentgender" value="{{student.gender}}">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+    
+            </select>
+        </p>
+
+        
+        
+        <p>
+            <label>
+                Enrollment date
+            </label>
+            <input type="date" id="studentenroldate" name="studentenroldate" value="{{student.enrollment_date}}">
+        </p>
+
+
+        <button type="submit">Update Student</button>
+      
+    </form>
+</body>
+</html>

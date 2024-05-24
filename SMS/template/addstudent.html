@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+</head>
+<body>
+    
+
+    <h2>Capture new student</h2>
+
+
+    <form method="post" action="/students/saveStudent">
+        {% csrf_token %}
+        <p>
+            <label>Student Name:</label>
+            <input type="text" id="studentname" name="studentname" required maxlength="50">
+        </p>
+
+        <p>
+            <label>
+                Student Lastname:
+            </label>
+            <input type="text" id="studentlastname" name="studentlastname" >
+        </p>
+
+        <p>
+            <label>
+                Date of Birth
+            </label>
+            <input type="date" id="studentdob" name="studentdob">
+        </p>
+
+        
+
+        <p>
+            <label>
+               Gender:
+            </label>
+      
+            <select name="studentgender" id="studentgender">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+            </select>
+        </p>
+
+        
+        
+        <p>
+            <label>
+                Enrollment date
+            </label>
+            <input type="date" id="studentenroldate" name="studentenroldate">
+        </p>
+
+
+        <button type="submit">Capture Student</button>
+
+        
+    </form>
+
+</body>
+</html>
